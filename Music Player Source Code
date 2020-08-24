@@ -13,7 +13,7 @@ player.title("Audio Player")
 player.geometry("205x340")
 
 """Playlist Register"""
-os.chdir("C:\Files\Music\Daft Punk - Discovery - 2001")
+os.chdir("C:\Files\Music")
 print(os.getcwd)
 songlist = os.listdir()
 
@@ -24,9 +24,6 @@ for item in songlist:
 	pos = 0
 	playlist.insert(pos, item)
 	pos += 1
-
-"""Get Song"""
-file = "03 - Digital Love.mp3"
 
 """Pygame Init"""
 pygame.init()
