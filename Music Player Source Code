@@ -12,10 +12,25 @@ player = tkr.Tk()
 player.title("Audio Player")
 player.geometry("205x340")
 
-"""Playlist Register"""
+"""Folder Register"""
 os.chdir("C:\Files\Music")
 print(os.getcwd)
+folderlist = os.listdir()
+
+"""Folder Input"""
+folder = tkr.Listbox(player,highlightcolor="blue",selectmode = tkr.SINGLE)
+print(folderlist)
+for folderitem in folderlist:
+	folderpos = 0
+	folder.insert(folderpos, folderitem)
+	folderpos +=1
+
+"""Playlist Register"""
+os.chdir("C:\Files\Music\Daft Punk - Discovery - 2001")
+print(os.getcwd)
 songlist = os.listdir()
+
+
 
 """Playlist Input"""
 playlist = tkr.Listbox(player,highlightcolor="blue",selectmode = tkr.SINGLE)
@@ -52,7 +67,8 @@ songtitle = tkr.Label(player,textvariable=var)
 Button1.pack(fill="x")
 Button2.pack(fill="x")
 songtitle.pack()
-playlist.pack(fill="both", expand="yes")
+playlist.pack(fill="both", expand="yes", side="RIGHT")
+folder.pack(fill="both", expand="yes", side="LEFT")
 
 
 
